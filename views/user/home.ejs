@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>User Home</title>
+</head>
+
+<body>
+
+
+    <nav class="navbar ">
+        <div class="navbar-start">
+            <div class="navbar-item">
+                <h1 class="title">Yoga Classes</h1>
+            </div>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <form action="/auth/logout"method="post">
+                <div class="navbar-item mt-3">
+                    <button class="button is-link is-normal">Log-out</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="columns">
+        <div class="column is-6 is-offset-3">
+            <div class="card">
+                <h1 class="title pb-4">Hello <%=user.name%></h1>
+                <%if(user.batch ===1){%>
+                <h2 class="subtitle">You are in the 6-7 AM batch Now</h2>
+                <%}else if(user.batch===2){%>
+                <h2 class="subtitle">You are in the 7-8 AM batch Now</h2>
+                <%}else if(user.batch===3){%>
+                <h2 class="subtitle">You are in the 8-9 AM batch Now</h2>
+                <%}else{%>
+                <h2 class="subtitle">You are in the 5-6 PM batch Now</h2>
+                <%}%>
+
+                <%if(user.nextMonthBatch ===1){%>
+                    <h2 class="subtitle">You will be in the 6-7 AM batch for next month</h2>
+                    <%}else if(user.nextMonthBatch===2){%>
+                    <h2 class="subtitle">You will in the 7-8 AM batch for next month</h2>
+                    <%}else if(user.nextMonthBatch===3){%>
+                    <h2 class="subtitle">You will in the 8-9 AM batch for next month</h2>
+                    <%}else{%>
+                    <h2 class="subtitle">You will in the 5-6 PM batch for next month</h2>
+                    <%}%>
+
+                    <div class="control has-text-centered mt-5 pb-4">
+                        <a href="../changeBatch/<%=user._id%>"class="button is-primary">Change next month batch</a>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>

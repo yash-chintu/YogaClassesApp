@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Login</title>
+</head>
+
+<body>
+    <section class="section title has-text-centered is-1">Yoga Classes</section>
+    <section class="section">
+        <div class="card column is-4 is-offset-4 mb-2">
+            <h1 class="title is-size-1 has-text-centered">Login!</h1>
+            <form  name="loginForm" action="/auth/login" method="post">
+                <div class="control py-2 px-4">
+
+                    <div class="field">
+                        <label for="mail" class="label">Email</label>
+                        <input name="mail"class="input" type="email" id="mail" >
+                    
+                </div>
+                <div class="field">
+                    <label for="Password" class="label">Password</label>
+                        <input name="password"class="input" type="password" id="Password" >
+                </div>
+                
+                
+                    <div class="control has-text-centered mt-5">
+                        <button type="submit"class="button is-primary">Login</button>
+                    </div>
+            </div>
+
+            </form>
+        </div>
+            <div class="card column is-4 is-offset-4 has-text-centered">
+                <p class="my-2 ">Not an user ? <a href="../auth/register">Sign up </a></p>
+            </div>
+        
+    </section>
+
+</body>
+
+</html>

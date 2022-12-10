@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>User Home</title>
+</head>
+
+<body>
+    <nav class="navbar ">
+        <div class="navbar-start">
+            <div class="navbar-item">
+                <h1 class="title">Yoga Classes</h1>
+            </div>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <form action="/auth/logout"method="post">
+                <div class="navbar-item mt-3">
+                    <button class="button is-link is-normal">Log-out</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="columns">
+        <div class="column is-6 is-offset-3">
+            <div class="card">
+                <form action="/user/changeBatch/<%=user._id%>" method="post">
+                <div class="field">
+                    <label for="batch" class="label">Batch</label>
+                    <select name="batch" class="input" type="text">
+                        <option value="1">6-7 AM</option>
+                        <option value="2">7-8 AM</option>
+                        <option value="3">8-9 AM</option>
+                        <option value="4">5-6 PM</option>
+                    </select>
+                
+                </div>
+
+                <div class="control has-text-centered mt-5 pb-5">
+                    <button class="button is-primary">Change Batch</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+
+
+    
+</body>
+
+</html>

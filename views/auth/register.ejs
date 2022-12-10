@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Signup</title>
+</head>
+<body>
+    <section class="section title has-text-centered is-1 mb-0">Yoga Classes</section>
+    <section class="section mt-1">
+            <div class="card column is-offset-4 is-4">
+                <h1 class="title has-text-centered">Sign Up</h1>
+                <form name ="registerForm" action="/auth/register" method="post" onSubmit="return validateForm()">
+                    <div class="control py-2 px-4">
+
+                        <div class="field">
+                            <label for="Fullname" class="label">Fullname</label>
+                            <input name="name"class="input" type="text" id="Fullname" >
+                        
+                        </div>
+
+                        <div class="field">
+                            <label for="age" class="label">Age</label>
+                            <input name="age"class="input" type="number" id="age" >
+                        
+                        </div>
+
+                        <div class="field">
+                            <label for="batch" class="label">Batch</label>
+                            <select name="batch" class="input" type="text">
+                                <option value="1">6-7 AM</option>
+                                <option value="2">7-8 AM</option>
+                                <option value="3">8-9 AM</option>
+                                <option value="4">5-6 PM</option>
+                            </select>
+                        
+                        </div>
+
+
+                        <div class="field">
+                            <label for="Email" class="label">Email</label>
+                            <input name="mail"class="input" type="email" id="Email" >
+                        
+                        </div>
+
+                        <div class="field">
+                        <label for="Password" class="label">Password</label>
+                            <input name="pass"class="input" type="password" id="Password" >
+                        </div>
+                        
+                    
+                        <div class="control has-text-centered mt-5">
+                            <button class="button is-primary">Signup</button>
+                        </div>
+                        
+                    
+                </div>
+
+                </form>
+            </div>
+            <div class="card column is-4 is-offset-4 has-text-centered my-2">
+                <p class="my-2 ">Already an user ? <a href="login.html">Log in </a></p>
+            </div>
+
+    </section>
+    
+<script>
+
+function validateForm() {
+    if(registerForm.name.value == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+    if(registerForm.age.value == "") {
+        alert("Age must be filled out");
+        return false;
+    }
+    if(registerForm.mail.value == "") {
+        alert("Email must be filled out");
+        return false;
+    }
+    if(registerForm.pass.value == "") {
+        alert("Password must be filled out");
+        return false;
+    }
+
+if(registerForm.age.value <18 || registerForm.age.value > 65){
+        alert("Age should be between 18 and 65");
+        return false;
+    }
+}
+
+</script>
+
+</body>
+</html>
